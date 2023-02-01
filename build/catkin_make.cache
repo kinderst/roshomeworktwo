@@ -1,0 +1,2 @@
+scki2725_hw2
+-DCATKIN_DEVEL_PREFIX=/home/hustletreeslrg420/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/hustletreeslrg420/catkin_ws/install -G Unix Makefiles
