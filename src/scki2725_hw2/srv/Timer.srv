@@ -1,4 +1,4 @@
 bool printing
-float64 start
 ---
-float64 end
+float64 clock
+time stamp

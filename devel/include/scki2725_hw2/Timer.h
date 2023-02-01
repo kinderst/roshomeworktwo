@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::scki2725_hw2::Timer > {
   static const char* value()
   {
-    return "0e426c5e8189291ccb09331d326d8d33";
+    return "b68471fcd0db25b9058c843e54654d6a";
   }
 
   static const char* value(const ::scki2725_hw2::Timer&) { return value(); }

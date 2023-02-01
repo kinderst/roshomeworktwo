@@ -1,8 +1,8 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "scki2725_hw2: 0 messages, 1 services")
+message(STATUS "scki2725_hw2: 1 messages, 1 services")
 
-set(MSG_I_FLAGS "-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Iscki2725_hw2:/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,6 +17,11 @@ add_custom_target(scki2725_hw2_generate_messages ALL)
 
 
 
+get_filename_component(_filename "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg" NAME_WE)
+add_custom_target(_scki2725_hw2_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "scki2725_hw2" "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg" "std_msgs/Header"
+)
+
 get_filename_component(_filename "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/srv/Timer.srv" NAME_WE)
 add_custom_target(_scki2725_hw2_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "scki2725_hw2" "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/srv/Timer.srv" ""
@@ -28,6 +33,12 @@ add_custom_target(_scki2725_hw2_generate_messages_check_deps_${_filename}
 
 ### Section generating for lang: gencpp
 ### Generating Messages
+_generate_msg_cpp(scki2725_hw2
+  "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/scki2725_hw2
+)
 
 ### Generating Services
 _generate_srv_cpp(scki2725_hw2
@@ -49,6 +60,8 @@ add_custom_target(scki2725_hw2_generate_messages_cpp
 add_dependencies(scki2725_hw2_generate_messages scki2725_hw2_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg" NAME_WE)
+add_dependencies(scki2725_hw2_generate_messages_cpp _scki2725_hw2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/srv/Timer.srv" NAME_WE)
 add_dependencies(scki2725_hw2_generate_messages_cpp _scki2725_hw2_generate_messages_check_deps_${_filename})
 
@@ -61,6 +74,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS scki2725_hw2_generate_messages_cpp)
 
 ### Section generating for lang: geneus
 ### Generating Messages
+_generate_msg_eus(scki2725_hw2
+  "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/scki2725_hw2
+)
 
 ### Generating Services
 _generate_srv_eus(scki2725_hw2
@@ -82,6 +101,8 @@ add_custom_target(scki2725_hw2_generate_messages_eus
 add_dependencies(scki2725_hw2_generate_messages scki2725_hw2_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg" NAME_WE)
+add_dependencies(scki2725_hw2_generate_messages_eus _scki2725_hw2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/srv/Timer.srv" NAME_WE)
 add_dependencies(scki2725_hw2_generate_messages_eus _scki2725_hw2_generate_messages_check_deps_${_filename})
 
@@ -94,6 +115,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS scki2725_hw2_generate_messages_eus)
 
 ### Section generating for lang: genlisp
 ### Generating Messages
+_generate_msg_lisp(scki2725_hw2
+  "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/scki2725_hw2
+)
 
 ### Generating Services
 _generate_srv_lisp(scki2725_hw2
@@ -115,6 +142,8 @@ add_custom_target(scki2725_hw2_generate_messages_lisp
 add_dependencies(scki2725_hw2_generate_messages scki2725_hw2_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg" NAME_WE)
+add_dependencies(scki2725_hw2_generate_messages_lisp _scki2725_hw2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/srv/Timer.srv" NAME_WE)
 add_dependencies(scki2725_hw2_generate_messages_lisp _scki2725_hw2_generate_messages_check_deps_${_filename})
 
@@ -127,6 +156,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS scki2725_hw2_generate_messages_lisp
 
 ### Section generating for lang: gennodejs
 ### Generating Messages
+_generate_msg_nodejs(scki2725_hw2
+  "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/scki2725_hw2
+)
 
 ### Generating Services
 _generate_srv_nodejs(scki2725_hw2
@@ -148,6 +183,8 @@ add_custom_target(scki2725_hw2_generate_messages_nodejs
 add_dependencies(scki2725_hw2_generate_messages scki2725_hw2_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg" NAME_WE)
+add_dependencies(scki2725_hw2_generate_messages_nodejs _scki2725_hw2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/srv/Timer.srv" NAME_WE)
 add_dependencies(scki2725_hw2_generate_messages_nodejs _scki2725_hw2_generate_messages_check_deps_${_filename})
 
@@ -160,6 +197,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS scki2725_hw2_generate_messages_node
 
 ### Section generating for lang: genpy
 ### Generating Messages
+_generate_msg_py(scki2725_hw2
+  "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/scki2725_hw2
+)
 
 ### Generating Services
 _generate_srv_py(scki2725_hw2
@@ -181,6 +224,8 @@ add_custom_target(scki2725_hw2_generate_messages_py
 add_dependencies(scki2725_hw2_generate_messages scki2725_hw2_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg" NAME_WE)
+add_dependencies(scki2725_hw2_generate_messages_py _scki2725_hw2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/srv/Timer.srv" NAME_WE)
 add_dependencies(scki2725_hw2_generate_messages_py _scki2725_hw2_generate_messages_check_deps_${_filename})
 

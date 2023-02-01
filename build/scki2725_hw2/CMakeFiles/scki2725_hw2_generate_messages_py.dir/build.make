@@ -53,22 +53,39 @@ CMAKE_BINARY_DIR = /home/hustletreeslrg420/catkin_ws/build
 # Include the progress variables for this target.
 include scki2725_hw2/CMakeFiles/scki2725_hw2_generate_messages_py.dir/progress.make
 
+scki2725_hw2/CMakeFiles/scki2725_hw2_generate_messages_py: /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg/_TimeCheck.py
 scki2725_hw2/CMakeFiles/scki2725_hw2_generate_messages_py: /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv/_Timer.py
+scki2725_hw2/CMakeFiles/scki2725_hw2_generate_messages_py: /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg/__init__.py
 scki2725_hw2/CMakeFiles/scki2725_hw2_generate_messages_py: /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv/__init__.py
 
 
+/home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg/_TimeCheck.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg/_TimeCheck.py: /home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg
+/home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg/_TimeCheck.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hustletreeslrg420/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG scki2725_hw2/TimeCheck"
+	cd /home/hustletreeslrg420/catkin_ws/build/scki2725_hw2 && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg -Iscki2725_hw2:/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p scki2725_hw2 -o /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg
+
 /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv/_Timer.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
 /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv/_Timer.py: /home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/srv/Timer.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hustletreeslrg420/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV scki2725_hw2/Timer"
-	cd /home/hustletreeslrg420/catkin_ws/build/scki2725_hw2 && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/srv/Timer.srv -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p scki2725_hw2 -o /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hustletreeslrg420/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV scki2725_hw2/Timer"
+	cd /home/hustletreeslrg420/catkin_ws/build/scki2725_hw2 && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/srv/Timer.srv -Iscki2725_hw2:/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p scki2725_hw2 -o /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv
+
+/home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg/__init__.py: /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg/_TimeCheck.py
+/home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg/__init__.py: /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv/_Timer.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hustletreeslrg420/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for scki2725_hw2"
+	cd /home/hustletreeslrg420/catkin_ws/build/scki2725_hw2 && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg --initpy
 
 /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv/__init__.py: /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg/_TimeCheck.py
 /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv/__init__.py: /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv/_Timer.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hustletreeslrg420/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python srv __init__.py for scki2725_hw2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hustletreeslrg420/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python srv __init__.py for scki2725_hw2"
 	cd /home/hustletreeslrg420/catkin_ws/build/scki2725_hw2 && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv --initpy
 
 scki2725_hw2_generate_messages_py: scki2725_hw2/CMakeFiles/scki2725_hw2_generate_messages_py
+scki2725_hw2_generate_messages_py: /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg/_TimeCheck.py
 scki2725_hw2_generate_messages_py: /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv/_Timer.py
+scki2725_hw2_generate_messages_py: /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/msg/__init__.py
 scki2725_hw2_generate_messages_py: /home/hustletreeslrg420/catkin_ws/devel/lib/python3/dist-packages/scki2725_hw2/srv/__init__.py
 scki2725_hw2_generate_messages_py: scki2725_hw2/CMakeFiles/scki2725_hw2_generate_messages_py.dir/build.make
 

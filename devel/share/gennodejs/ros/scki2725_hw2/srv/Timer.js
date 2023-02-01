@@ -22,7 +22,6 @@ class TimerRequest {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.printing = null;
-      this.start = null;
     }
     else {
       if (initObj.hasOwnProperty('printing')) {
@@ -31,12 +30,6 @@ class TimerRequest {
       else {
         this.printing = false;
       }
-      if (initObj.hasOwnProperty('start')) {
-        this.start = initObj.start
-      }
-      else {
-        this.start = 0.0;
-      }
     }
   }
 
@@ -44,8 +37,6 @@ class TimerRequest {
     // Serializes a message object of type TimerRequest
     // Serialize message field [printing]
     bufferOffset = _serializer.bool(obj.printing, buffer, bufferOffset);
-    // Serialize message field [start]
-    bufferOffset = _serializer.float64(obj.start, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -55,13 +46,11 @@ class TimerRequest {
     let data = new TimerRequest(null);
     // Deserialize message field [printing]
     data.printing = _deserializer.bool(buffer, bufferOffset);
-    // Deserialize message field [start]
-    data.start = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 9;
+    return 1;
   }
 
   static datatype() {
@@ -71,14 +60,13 @@ class TimerRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '565d68e018f7aa32f4cc9782ad9fa1e7';
+    return '424d19f59af93153953d3ef5c3614349';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     bool printing
-    float64 start
     
     `;
   }
@@ -96,13 +84,6 @@ class TimerRequest {
       resolved.printing = false
     }
 
-    if (msg.start !== undefined) {
-      resolved.start = msg.start;
-    }
-    else {
-      resolved.start = 0.0
-    }
-
     return resolved;
     }
 };
@@ -111,22 +92,31 @@ class TimerResponse {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
-      this.end = null;
+      this.clock = null;
+      this.stamp = null;
     }
     else {
-      if (initObj.hasOwnProperty('end')) {
-        this.end = initObj.end
+      if (initObj.hasOwnProperty('clock')) {
+        this.clock = initObj.clock
       }
       else {
-        this.end = 0.0;
+        this.clock = 0.0;
+      }
+      if (initObj.hasOwnProperty('stamp')) {
+        this.stamp = initObj.stamp
+      }
+      else {
+        this.stamp = {secs: 0, nsecs: 0};
       }
     }
   }
 
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type TimerResponse
-    // Serialize message field [end]
-    bufferOffset = _serializer.float64(obj.end, buffer, bufferOffset);
+    // Serialize message field [clock]
+    bufferOffset = _serializer.float64(obj.clock, buffer, bufferOffset);
+    // Serialize message field [stamp]
+    bufferOffset = _serializer.time(obj.stamp, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -134,13 +124,15 @@ class TimerResponse {
     //deserializes a message object of type TimerResponse
     let len;
     let data = new TimerResponse(null);
-    // Deserialize message field [end]
-    data.end = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [clock]
+    data.clock = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [stamp]
+    data.stamp = _deserializer.time(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 8;
+    return 16;
   }
 
   static datatype() {
@@ -150,13 +142,14 @@ class TimerResponse {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '270bbe95388b4ce7389d41b4b3b90cb6';
+    return 'd593ef9452dfc837176d09f400fd3fd3';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    float64 end
+    float64 clock
+    time stamp
     
     `;
   }
@@ -167,11 +160,18 @@ class TimerResponse {
       msg = {};
     }
     const resolved = new TimerResponse(null);
-    if (msg.end !== undefined) {
-      resolved.end = msg.end;
+    if (msg.clock !== undefined) {
+      resolved.clock = msg.clock;
     }
     else {
-      resolved.end = 0.0
+      resolved.clock = 0.0
+    }
+
+    if (msg.stamp !== undefined) {
+      resolved.stamp = msg.stamp;
+    }
+    else {
+      resolved.stamp = {secs: 0, nsecs: 0}
     }
 
     return resolved;
@@ -181,6 +181,6 @@ class TimerResponse {
 module.exports = {
   Request: TimerRequest,
   Response: TimerResponse,
-  md5sum() { return '0e426c5e8189291ccb09331d326d8d33'; },
+  md5sum() { return 'b68471fcd0db25b9058c843e54654d6a'; },
   datatype() { return 'scki2725_hw2/Timer'; }
 };

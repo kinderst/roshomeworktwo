@@ -24,12 +24,10 @@ struct TimerRequest_
   typedef TimerRequest_<ContainerAllocator> Type;
 
   TimerRequest_()
-    : printing(false)
-    , start(0.0)  {
+    : printing(false)  {
     }
   TimerRequest_(const ContainerAllocator& _alloc)
-    : printing(false)
-    , start(0.0)  {
+    : printing(false)  {
   (void)_alloc;
     }
 
@@ -37,9 +35,6 @@ struct TimerRequest_
 
    typedef uint8_t _printing_type;
   _printing_type printing;
-
-   typedef double _start_type;
-  _start_type start;
 
 
 
@@ -70,8 +65,7 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::scki2725_hw2::TimerRequest_<ContainerAllocator1> & lhs, const ::scki2725_hw2::TimerRequest_<ContainerAllocator2> & rhs)
 {
-  return lhs.printing == rhs.printing &&
-    lhs.start == rhs.start;
+  return lhs.printing == rhs.printing;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -128,12 +122,12 @@ struct MD5Sum< ::scki2725_hw2::TimerRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "565d68e018f7aa32f4cc9782ad9fa1e7";
+    return "424d19f59af93153953d3ef5c3614349";
   }
 
   static const char* value(const ::scki2725_hw2::TimerRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x565d68e018f7aa32ULL;
-  static const uint64_t static_value2 = 0xf4cc9782ad9fa1e7ULL;
+  static const uint64_t static_value1 = 0x424d19f59af93153ULL;
+  static const uint64_t static_value2 = 0x953d3ef5c3614349ULL;
 };
 
 template<class ContainerAllocator>
@@ -153,7 +147,6 @@ struct Definition< ::scki2725_hw2::TimerRequest_<ContainerAllocator> >
   static const char* value()
   {
     return "bool printing\n"
-"float64 start\n"
 ;
   }
 
@@ -173,7 +166,6 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.printing);
-      stream.next(m.start);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -194,8 +186,6 @@ struct Printer< ::scki2725_hw2::TimerRequest_<ContainerAllocator> >
   {
     s << indent << "printing: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.printing);
-    s << indent << "start: ";
-    Printer<double>::stream(s, indent + "  ", v.start);
   }
 };
 

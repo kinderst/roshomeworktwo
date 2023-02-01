@@ -38,13 +38,21 @@
 
 import rospy
 from std_msgs.msg import String
+from scki2725_hw2.msg import TimeCheck
 
 data_array = []
 
 def callback(data):
-    current_time = rospy.get_time()
-    messenge_sent_time = float(data.data.split("time:")[1])
-    time_diff = current_time - messenge_sent_time
+    # current_time = rospy.get_time()
+    current_time = rospy.Time.now()
+    print(data)
+    sent_time_header = float("" + str(data.header.stamp.secs) + "." + str(data.header.stamp.nsecs))
+    time_diff = current_time - data.header.stamp
+    #to convert to seconds (originally in nanoseconds I think)
+    #per: http://wiki.ros.org/rospy/Overview/Time
+    time_diff = time_diff.to_sec()
+    # time_diff = current_time - sent_time_header
+    print("TIME DIFF: ", time_diff)
     data_array.append(time_diff)
     rospy.loginfo(time_diff)
     #if data array size is 400, save the array to file
@@ -64,7 +72,7 @@ def listener():
     # run simultaneously.
     rospy.init_node('listener', anonymous=True)
 
-    rospy.Subscriber('chatter', String, callback)
+    rospy.Subscriber('chatter', TimeCheck, callback)
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()

@@ -38,15 +38,20 @@
 
 import rospy
 from std_msgs.msg import String
+from scki2725_hw2.msg import TimeCheck
 
 def talker():
-    pub = rospy.Publisher('chatter', String, queue_size=10)
+    pub = rospy.Publisher('chatter', TimeCheck, queue_size=10)
     rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
-        hello_str = "time:%s" % rospy.get_time()
-        rospy.loginfo(hello_str)
-        pub.publish(hello_str)
+        msg = TimeCheck()
+        #one is the timestamp, which we are recommended to use
+        msg.header.stamp = rospy.Time.now()
+        #the other is this get time function, which is similar
+        msg.checking = rospy.get_time()
+        rospy.loginfo(msg)
+        pub.publish(msg)
         rate.sleep()
 
 if __name__ == '__main__':

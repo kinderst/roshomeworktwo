@@ -4,20 +4,17 @@ from __future__ import print_function
 
 from scki2725_hw2.srv import Timer, TimerResponse
 import rospy
-import time
+#import time
 
 #handles requests to the server
 def handle_timer(req):
-    #sends the start time of the request
-    #note unclear if do this or just pass the start time
-    #from client? I will pass start time from client instead
-    #request_start_time = time.time()
-
-    #otherwise just use the one passed in
-    request_start_time = req.start
+    #I guess we start the timer here, since that would
+    #time execution time and return to client (ignore time to srv)
+    time_stamp = rospy.Time.now()
+    time_clock = rospy.get_time()
     if req.printing:
-        print("Returning [%s]"%(request_start_time))
-    return TimerResponse(request_start_time)
+        print("Returning [%s, %s]"%(time_stamp, time_clock))
+    return TimerResponse(time_stamp, time_clock)
 
 def timer_server():
     rospy.init_node('timer_server')

@@ -24,17 +24,22 @@ struct TimerResponse_
   typedef TimerResponse_<ContainerAllocator> Type;
 
   TimerResponse_()
-    : end(0.0)  {
+    : clock(0.0)
+    , stamp()  {
     }
   TimerResponse_(const ContainerAllocator& _alloc)
-    : end(0.0)  {
+    : clock(0.0)
+    , stamp()  {
   (void)_alloc;
     }
 
 
 
-   typedef double _end_type;
-  _end_type end;
+   typedef double _clock_type;
+  _clock_type clock;
+
+   typedef ros::Time _stamp_type;
+  _stamp_type stamp;
 
 
 
@@ -65,7 +70,8 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::scki2725_hw2::TimerResponse_<ContainerAllocator1> & lhs, const ::scki2725_hw2::TimerResponse_<ContainerAllocator2> & rhs)
 {
-  return lhs.end == rhs.end;
+  return lhs.clock == rhs.clock &&
+    lhs.stamp == rhs.stamp;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -122,12 +128,12 @@ struct MD5Sum< ::scki2725_hw2::TimerResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "270bbe95388b4ce7389d41b4b3b90cb6";
+    return "d593ef9452dfc837176d09f400fd3fd3";
   }
 
   static const char* value(const ::scki2725_hw2::TimerResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x270bbe95388b4ce7ULL;
-  static const uint64_t static_value2 = 0x389d41b4b3b90cb6ULL;
+  static const uint64_t static_value1 = 0xd593ef9452dfc837ULL;
+  static const uint64_t static_value2 = 0x176d09f400fd3fd3ULL;
 };
 
 template<class ContainerAllocator>
@@ -146,7 +152,8 @@ struct Definition< ::scki2725_hw2::TimerResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "float64 end\n"
+    return "float64 clock\n"
+"time stamp\n"
 ;
   }
 
@@ -165,7 +172,8 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.end);
+      stream.next(m.clock);
+      stream.next(m.stamp);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -184,8 +192,10 @@ struct Printer< ::scki2725_hw2::TimerResponse_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::scki2725_hw2::TimerResponse_<ContainerAllocator>& v)
   {
-    s << indent << "end: ";
-    Printer<double>::stream(s, indent + "  ", v.end);
+    s << indent << "clock: ";
+    Printer<double>::stream(s, indent + "  ", v.clock);
+    s << indent << "stamp: ";
+    Printer<ros::Time>::stream(s, indent + "  ", v.stamp);
   }
 };
 

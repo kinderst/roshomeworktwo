@@ -38,6 +38,10 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scki2725_hw2/msg" TYPE FILE FILES "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/msg/TimeCheck.msg")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/scki2725_hw2/srv" TYPE FILE FILES "/home/hustletreeslrg420/catkin_ws/src/scki2725_hw2/srv/Timer.srv")
 endif()
 
